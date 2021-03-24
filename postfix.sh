@@ -3,7 +3,7 @@ sudo apt-get update
 sudo debconf-set-selections <<< "postfix postfix/mailname string coditas.com"
 sudo debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
 sudo apt-get install --assume-yes postfix
-sudo echo "[smtp.gmail.com]:587 manish.agnani@coditas.com:vwlzfibcjtskbcqr" >> /etc/postfix/sasl/sasl_passwd 
+sudo echo "[smtp.gmail.com]:587 manish.agnani@coditas.com:****************" >> /etc/postfix/sasl/sasl_passwd 
 sudo postmap /etc/postfix/sasl/sasl_passwd
 sudo sed -i 's/relayhost =/relayhost = [smtp.gmail.com]:587/g' /etc/postfix/main.cf
 sudo echo "# Enable SASL authentication
